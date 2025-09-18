@@ -51,7 +51,7 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     // Try to parse body, but don't fail if it's empty
-    let body = {};
+    let body: { forceSync?: boolean } = { forceSync: false };
     try {
       body = await request.json();
     } catch (e) {

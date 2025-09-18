@@ -190,8 +190,8 @@ export class MockGoogleSheetsService {
                 }
                 
                 // Ensure status is one of the valid values
-                const validStatuses = ['inventory', 'listed', 'sold', 'pending', 'expired'];
-                if (!validStatuses.includes(status)) {
+                const validStatuses = ['inventory', 'listed', 'sold', 'pending', 'expired'] as const;
+                if (!validStatuses.includes(status as any)) {
                   status = 'inventory'; // Default to inventory if invalid
                 }
               
