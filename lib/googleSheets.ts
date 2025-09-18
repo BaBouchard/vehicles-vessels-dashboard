@@ -213,11 +213,11 @@ export class MockGoogleSheetsService {
                   year: parseInt(columns[3]) || new Date().getFullYear(),
                   price: price,
                   commission: commission,
-                  status: status,
+                  status: status as 'inventory' | 'listed' | 'sold' | 'pending' | 'expired',
                   description: columns[7] || '',
                   imageUrl: columns[8] || 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop',
-                  createdAt: columns[9] ? new Date(columns[9]) : new Date(),
-                  updatedAt: columns[10] ? new Date(columns[10]) : new Date()
+                  createdAt: columns[9] || new Date().toISOString(),
+                  updatedAt: columns[10] || new Date().toISOString()
                 });
               }
               }
@@ -297,11 +297,11 @@ export class MockGoogleSheetsService {
                     length: 50 + Math.floor(Math.random() * 50), // Random length between 50-100ft
                     price: price,
                     commission: commission,
-                    status: columns[6] || 'inventory',
+                    status: (columns[6] || 'inventory') as 'inventory' | 'listed' | 'sold' | 'pending' | 'expired',
                     description: columns[7] || '',
                     imageUrl: columns[8] || 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop',
-                    createdAt: columns[9] ? new Date(columns[9]) : new Date(),
-                    updatedAt: columns[10] ? new Date(columns[10]) : new Date()
+                    createdAt: columns[9] || new Date().toISOString(),
+                    updatedAt: columns[10] || new Date().toISOString()
                   });
                 }
               }
