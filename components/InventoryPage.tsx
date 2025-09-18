@@ -141,7 +141,7 @@ export default function InventoryPage({ onBack }: InventoryPageProps) {
               <div className="flex items-center space-x-4">
                 <div className="relative w-12 h-12 float-animation">
                   <Image
-                    src="/phonto 2.JPG"
+                    src="/logo-small.jpg"
                     alt="Vehicles & Vessels Logo"
                     fill
                     className="object-contain rounded-lg"
