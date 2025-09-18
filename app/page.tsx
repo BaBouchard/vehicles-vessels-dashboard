@@ -169,7 +169,7 @@ export default function Dashboard() {
             <div className="flex items-center space-x-4">
               <div className="relative w-12 h-12">
                 <Image
-                  src="/phonto 2.jpg"
+                  src="/phonto 2.JPG"
                   alt="Vehicles & Vessels Logo"
                   fill
                   className="object-contain rounded-lg"
