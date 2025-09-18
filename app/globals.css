@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-dark-800 rounded-lg shadow-md border border-gray-800 p-6;
+  }
+  
+  .stat-card {
+    @apply card hover:shadow-lg hover:border-gray-600 transition-all duration-200 hover:scale-[1.02] hover:-translate-y-0.5;
+  }
+  
+  .luxury-gradient {
+    @apply bg-gradient-to-br from-gray-900 via-black to-gray-800;
+  }
+  
+  .gold-accent {
+    @apply text-yellow-500;
+  }
+  
+  .dark-card {
+    @apply bg-dark-800 border-gray-800 text-white;
+  }
+  
+  /* Subtle Animations */
+  .float-animation {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite alternate;
+  }
+  
+  .slide-in-left {
+    animation: slide-in-left 0.6s ease-out;
+  }
+  
+  .slide-in-right {
+    animation: slide-in-right 0.6s ease-out;
+  }
+  
+  .slide-in-up {
+    animation: slide-in-up 0.6s ease-out;
+  }
+  
+  .bounce-in {
+    animation: bounce-in 0.8s ease-out;
+  }
+  
+  .rotate-slow {
+    animation: rotate-slow 30s linear infinite;
+  }
+  
+  .wiggle {
+    animation: wiggle 0.8s ease-in-out infinite;
+  }
+  
+  .fade-in-stagger {
+    animation: fade-in-stagger 0.4s ease-out forwards;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .fade-in-stagger:nth-child(1) { animation-delay: 0.05s; }
+  .fade-in-stagger:nth-child(2) { animation-delay: 0.1s; }
+  .fade-in-stagger:nth-child(3) { animation-delay: 0.15s; }
+  .fade-in-stagger:nth-child(4) { animation-delay: 0.2s; }
+  .fade-in-stagger:nth-child(5) { animation-delay: 0.25s; }
+  .fade-in-stagger:nth-child(6) { animation-delay: 0.3s; }
+  .fade-in-stagger:nth-child(7) { animation-delay: 0.35s; }
+  .fade-in-stagger:nth-child(8) { animation-delay: 0.4s; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulse-glow {
+  0% { 
+    box-shadow: 0 0 2px rgba(251, 191, 36, 0.2);
+  }
+  100% { 
+    box-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+  }
+}
+
+@keyframes slide-in-left {
+  0% { 
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% { 
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  100% { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-up {
+  0% { 
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in {
+  0% { 
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  50% { 
+    transform: scale(1.02);
+  }
+  100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes wiggle {
+  0%, 7% { transform: rotateZ(0); }
+  15% { transform: rotateZ(-3deg); }
+  20% { transform: rotateZ(2deg); }
+  25% { transform: rotateZ(-2deg); }
+  30% { transform: rotateZ(1deg); }
+  35% { transform: rotateZ(-1deg); }
+  40%, 100% { transform: rotateZ(0); }
+}
+
+@keyframes fade-in-stagger {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes garage-door-open {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-garage-door-open {
+  animation: garage-door-open 2s ease-in-out forwards;
+}
+
