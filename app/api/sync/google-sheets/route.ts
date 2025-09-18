@@ -4,6 +4,21 @@ import { updateInventory } from '@/lib/data';
 
 export async function GET(request: NextRequest) {
   try {
+    // Debug: Log environment variable
+    const sheetId = process.env.GOOGLE_SHEETS_SHEET_ID;
+    console.log('Environment check:', {
+      hasSheetId: !!sheetId,
+      sheetIdLength: sheetId?.length,
+      environment: process.env.NODE_ENV
+    });
+    
+    if (!sheetId) {
+      return NextResponse.json(
+        { error: 'GOOGLE_SHEETS_SHEET_ID environment variable not set' },
+        { status: 500 }
+      );
+    }
+    
     const sheetsService = createGoogleSheetsService();
     
     // Test connection first

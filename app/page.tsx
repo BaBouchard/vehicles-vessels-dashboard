@@ -167,11 +167,12 @@ export default function Dashboard() {
           <div className="flex justify-between items-center py-4">
             {/* Logo and Title */}
             <div className="flex items-center space-x-4">
-              <div className="relative w-12 h-12">
+              <div className="w-12 h-12">
                 <Image
                   src="/logo-small.jpg"
                   alt="Vehicles & Vessels Logo"
-                  fill
+                  width={48}
+                  height={48}
                   className="object-contain rounded-lg"
                 />
               </div>

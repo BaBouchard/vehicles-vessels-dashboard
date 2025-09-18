@@ -139,11 +139,12 @@ export default function InventoryPage({ onBack }: InventoryPageProps) {
                 <span className="text-sm text-yellow-400">Back to Dashboard</span>
               </button>
               <div className="flex items-center space-x-4">
-                <div className="relative w-12 h-12 float-animation">
+                <div className="w-12 h-12 float-animation">
                   <Image
                     src="/logo-small.jpg"
                     alt="Vehicles & Vessels Logo"
-                    fill
+                    width={48}
+                    height={48}
                     className="object-contain rounded-lg"
                   />
                 </div>

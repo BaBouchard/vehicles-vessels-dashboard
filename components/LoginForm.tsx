@@ -47,11 +47,12 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
         {/* Logo and Title */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="relative w-20 h-20">
+            <div className="w-20 h-20">
               <Image
                 src="/logo-small.jpg"
                 alt="Vehicles & Vessels Logo"
-                fill
+                width={80}
+                height={80}
                 className="object-contain rounded-lg"
               />
             </div>
